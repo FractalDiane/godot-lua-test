@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/cutscene.gdns" type="Script" id=1]
+
+[node name="Test" type="Node2D"]
+
+[node name="Cutscene" type="Node" parent="."]
+script = ExtResource( 1 )
+lua_file = "res://test.lua"
+
+[node name="TimerWait" type="Timer" parent="Cutscene"]
+wait_time = 2.0
+one_shot = true
+
+[node name="TestNode" type="Node2D" parent="."]
+position = Vector2( 300, 200 )
+
+[connection signal="timeout" from="Cutscene/TimerWait" to="Cutscene" method="end_wait"]

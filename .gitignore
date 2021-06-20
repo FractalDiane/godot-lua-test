@@ -1,0 +1,7 @@
+game/.import/
+game/library/bin/
+src/build/
+
+*.os
+*.o
+*.tmp
